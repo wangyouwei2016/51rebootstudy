@@ -1,5 +1,6 @@
-f = raw_input('please input a number:')
+f = 0
 while f == 0:
-    n = raw_input('please input a number:')
-    v = f + n
+    v = raw_input('please input a number:')
+    f = f + v
+
     print v
