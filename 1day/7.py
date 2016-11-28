@@ -47,4 +47,8 @@ print Counter([1,4,2,4,2,2,5,2,6,3,3,6,3,6,6,3,3,3,7,8,9,8,7,0,7,1,2,4,7,8,9])
 x = "I like to program in Python"
 print x.count("i")
 
-netstat -ant | awk '/^tcp/{b[$NF]++}END{for(i in b)print i,b[i]}'
+#连加1+2+3到100
+num = 0
+for i in range(1,101):
+    num += i
+    print num
