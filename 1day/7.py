@@ -48,7 +48,9 @@ x = "I like to program in Python"
 print x.count("i")
 
 #连加1+2+3到100
-num = 0
-for i in range(1,101):
-    num += i
-    print num
+# num = 0
+# for i in range(1,101):
+#     num += i
+#     print num
+
+print(sum(range(1, 101)))
