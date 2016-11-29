@@ -1,24 +1,15 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-al=['ssss']
-al.append('wefwa')
-print al
+# def text_create(name , msg):
+#     desktop_path = '/home/wangyw/ '
+#     full_path = desktop_path + name + '.txt'
+#     file = open(full_path , 'w')
+#     file.write(msg)
+#     file.close()
+#     print 'Done'
+#
+#
+# text_create('1AAA' , 'wwwwww')
 
-#条件判断
-password_list = ['000','12345']
-def account_login():
-    password=input('password:')
-    password_correct = password == password_list[-1]
-    password_reset = password == password_list[0]
-    print password_list[-1]
-    if password_correct:
-        print 'secc'
-    elif password_reset:
-        new_password = input('enter a new pss:')
-        password_list.append(new_password)
-        print ('set suc')
-        account_login()
-    else:
-        print "false"
-        account_login()
-account_login()
+path = '/home/wangyw/'
+for i in range(1,11):
+    full2_path = path + str(i) + '.txt'
+    file = open(full2_path,'w')

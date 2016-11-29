@@ -65,4 +65,4 @@ def text_create(name,msg):
     file.write(msg)
     file.close()
     print Done
-text
+text_create(sdfas,sdfsd)
