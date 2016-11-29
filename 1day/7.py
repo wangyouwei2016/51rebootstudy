@@ -2,39 +2,41 @@
 # -*- coding: utf-8 -*-  
 
 # http://blog.csdn.net/onlyanyz/article/details/45177643  参考的算法讲解
-# pycharm技巧：  选中 ctrl+/ 批量注释  ctrl+d  快速复制  ctrl+e 快速删除 shift+enter 快速换行  TAB缩进
-# 有批量tab转空格功能  todo功能要做的git提交有提示 点击小灯泡有遵守PEP8编码规范的格式化
+# pycharm技巧：  选中 ctrl+/ 批量注释  ctrl+d  快速复制  ctrl+e 快速删除 shift+enter 快速换行  ctrl+alt+l 遵守PEP8编码规范的格式化
+# 有批量tab转空格功能  todo功能要做的git提交有提示
 # 作业1 统计最大两个值
 # 方法1
-unsortedList = [1, 2, 3, 2, 12, 3, 1, 3, 21, 2, 2, 3, 4111, 22, 3333, 444, 111, 4, 5, 777, 65555, 45, 33, 45]
+unsortedList = [1 , 2 , 3 , 2 , 12 , 3 , 1 , 3 , 21 , 2 , 2 , 3 , 4111 , 22 , 3333 , 444 , 111 , 4 , 5 , 777 , 65555 ,
+                45 , 33 , 45]
 
 
 def bubbleSort(unsortedList):
     list_length = len(unsortedList)
-    for i in range(0, list_length - 1):
-        for j in range(0, list_length - i - 1):
+    for i in range(0 , list_length - 1):
+        for j in range(0 , list_length - i - 1):
             if unsortedList[j] > unsortedList[j + 1]:
-                unsortedList[j], unsortedList[j + 1] = unsortedList[j + 1], unsortedList[j]
+                unsortedList[j] , unsortedList[j + 1] = unsortedList[j + 1] , unsortedList[j]
     return unsortedList
 
 
 print bubbleSort(unsortedList)[-2:]
 
 # 方法2
-unsortedList = [1, 2, 3, 2, 12, 3, 1, 3, 21, 2, 2, 3, 4111, 22, 3333, 444, 111, 4, 5, 777, 65555, 45, 33, 45]
+unsortedList = [1 , 2 , 3 , 2 , 12 , 3 , 1 , 3 , 21 , 2 , 2 , 3 , 4111 , 22 , 3333 , 444 , 111 , 4 , 5 , 777 , 65555 ,
+                45 , 33 , 45]
 for i in sorted(unsortedList)[-2:]:
     print i
 
 # 作业2 统计字符出现次数
 # 参考 http://www.jb51.net/article/53911.htm
 # 方法1：
-mylist = [1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+mylist = [1 , 2 , 2 , 2 , 2 , 3 , 3 , 3 , 4 , 4 , 4 , 4]
 myset = set(mylist)  # myset是另外一个列表，里面的内容是mylist里面的无重复项
 print myset
 for item in myset:
-    print("the %d has found %d" % (item, mylist.count(item)))
+    print("the %d has found %d" % (item , mylist.count(item)))
 # 方法2
-List = [1, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4]
+List = [1 , 2 , 2 , 2 , 2 , 3 , 3 , 3 , 4 , 4 , 4 , 4]
 
 a = {}
 for i in List:
@@ -45,7 +47,9 @@ print (a)
 # 方法3
 from collections import Counter
 
-print Counter([1, 4, 2, 4, 2, 2, 5, 2, 6, 3, 3, 6, 3, 6, 6, 3, 3, 3, 7, 8, 9, 8, 7, 0, 7, 1, 2, 4, 7, 8, 9])
+print Counter(
+    [1 , 4 , 2 , 4 , 2 , 2 , 5 , 2 , 6 , 3 , 3 , 6 , 3 , 6 , 6 , 3 , 3 , 3 , 7 , 8 , 9 , 8 , 7 , 0 , 7 , 1 , 2 , 4 , 7 ,
+     8 , 9])
 
 # count函数 统计指定字符出现次数
 
@@ -58,4 +62,4 @@ print x.count("i")
 #     num += i
 #     print num
 
-print(sum(range(1, 101)))
+print(sum(range(1 , 101)))
