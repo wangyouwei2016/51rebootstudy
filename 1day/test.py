@@ -60,3 +60,9 @@ print(wight_converter(w))
 # 设计一个函数 控制写入文件名称和内容
 
 def text_create(name,msg):
+    desktop_path='/home/wangyw/ '
+    full_path=desktop_path + name +'.txt'
+    file.write(msg)
+    file.close()
+    print Done
+text
