@@ -106,8 +106,8 @@ def roll_dice(number=3 , points=None):
     if points is None:
         points = []
     while number > 0:
-        points = random.randrange(1 , 7)
-        points.append(points)
+        point = random.randrange(1 , 7)           #注意是point 无s
+        points.append(point)                            #注意是point 无s
         number = number - 1
     return points
 
@@ -124,7 +124,7 @@ def roll_result(total):
 def start_game():
     print ('<<<<<game start>>>>>')
     choices = ['Big' , 'Small']
-    your_choice = input('Big or Small :')
+    your_choice = raw_input('Big or Small :')
     if your_choice in choices:
         points = roll_dice()
         total = sum(points)
