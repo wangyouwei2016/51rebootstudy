@@ -98,6 +98,7 @@
 #     if i % 2 == 0:
 #         print i
 
+#摇色子游戏
 import random
 
 
@@ -122,20 +123,29 @@ def roll_result(total):
 
 
 def start_game():
-    print ('<<<<<game start>>>>>')
-    choices = ['Big' , 'Small']
-    your_choice = raw_input('Big or Small :')
-    if your_choice in choices:
-        points = roll_dice()
-        total = sum(points)
-        youWin = your_choice == roll_result(total)
-        if youWin:
-            print ('The points are' , points , 'You win!')
+    your_money = 1000
+    while your_money > 0:
+        print ('<<<<<game start>>>>>')
+        choices = ['Big' , 'Small']
+        your_choice = raw_input('Big or Small :')
+        if your_choice in choices:
+            your_bet = int(input('how much you wangna bet?-'))
+            points = roll_dice()
+            total = sum(points)
+            youWin = your_choice == roll_result(total)
+            if youWin:
+                print ('The points are' , points , 'You win!')
+                print ('you gaiend {},you have {} now!'.format(your_bet,your_money+your_bet))
+                your_money=your_money+your_bet
+            else:
+                print ('The points are' , points , 'You lose!')
+                print ('You lose {},you have {} now'.format(your_bet,your_money-your_bet))
+                your_money=your_money - your_bet
         else:
-            print ('The points are' , points , 'You lost!')
+            print ('INVALID WORDS')
     else:
-        print ('INVALID WORDS')
-        start_game()
-
-
+        print ('game over')
 start_game()
+
+
+
