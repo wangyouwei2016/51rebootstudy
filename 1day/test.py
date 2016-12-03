@@ -98,54 +98,59 @@
 #     if i % 2 == 0:
 #         print i
 
-#摇色子游戏
-import random
+# 摇色子游戏
+# import random
+#
+#
+# def roll_dice(number=3 , points=None):
+#     print('<<<<<<<<<<<ROLL THE DICE>>>>>>>>>>>>>')
+#     if points is None:
+#         points = []
+#     while number > 0:
+#         point = random.randrange(1 , 7)           #注意是point 无s
+#         points.append(point)                            #注意是point 无s
+#         number = number - 1
+#     return points
+#
+#
+# def roll_result(total):
+#     isBig = 11 <= total <= 18
+#     isSmall = 3 <= total <= 10
+#     if isBig:
+#         return 'Big'
+#     elif isSmall:
+#         return 'Small'
+#
+#
+# def start_game():
+#     your_money = 1000
+#     while your_money > 0:
+#         print ('<<<<<game start>>>>>')
+#         choices = ['Big' , 'Small']
+#         your_choice = raw_input('Big or Small :')
+#         if your_choice in choices:
+#             your_bet = int(input('how much you wangna bet?-'))
+#             points = roll_dice()
+#             total = sum(points)
+#             youWin = your_choice == roll_result(total)
+#             if youWin:
+#                 print ('The points are' , points , 'You win!')
+#                 print ('you gaiend {},you have {} now!'.format(your_bet,your_money+your_bet))
+#                 your_money=your_money+your_bet
+#             else:
+#                 print ('The points are' , points , 'You lose!')
+#                 print ('You lose {},you have {} now'.format(your_bet,your_money-your_bet))
+#                 your_money=your_money - your_bet
+#         else:
+#             print ('INVALID WORDS')
+#     else:
+#         print ('game over')
+# start_game()
 
 
-def roll_dice(number=3 , points=None):
-    print('<<<<<<<<<<<ROLL THE DICE>>>>>>>>>>>>>')
-    if points is None:
-        points = []
-    while number > 0:
-        point = random.randrange(1 , 7)           #注意是point 无s
-        points.append(point)                            #注意是point 无s
-        number = number - 1
-    return points
-
-
-def roll_result(total):
-    isBig = 11 <= total <= 18
-    isSmall = 3 <= total <= 10
-    if isBig:
-        return 'Big'
-    elif isSmall:
-        return 'Small'
-
-
-def start_game():
-    your_money = 1000
-    while your_money > 0:
-        print ('<<<<<game start>>>>>')
-        choices = ['Big' , 'Small']
-        your_choice = raw_input('Big or Small :')
-        if your_choice in choices:
-            your_bet = int(input('how much you wangna bet?-'))
-            points = roll_dice()
-            total = sum(points)
-            youWin = your_choice == roll_result(total)
-            if youWin:
-                print ('The points are' , points , 'You win!')
-                print ('you gaiend {},you have {} now!'.format(your_bet,your_money+your_bet))
-                your_money=your_money+your_bet
-            else:
-                print ('The points are' , points , 'You lose!')
-                print ('You lose {},you have {} now'.format(your_bet,your_money-your_bet))
-                your_money=your_money - your_bet
-        else:
-            print ('INVALID WORDS')
-    else:
-        print ('game over')
-start_game()
-
-
-
+a = [letter.lower() for letter in 'ABCDEFGHIGKLMN']
+print a
+b = [n for n in range(1 , 10) if n % 2 == 0]
+print b
+d = {i: i + 1 for i in range(4)}
+print d
