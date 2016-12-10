@@ -1,16 +1,15 @@
-password1_list=['12345','000000','999']
-def account_login():
-    password1 = input('pass:')
-    password1_correct = password1 == password1_list[:1]
-    password1_reset = password1 == password1_list[-1]
-    if password1_correct:
-        print 'ok'
-    elif password1_reset:
-        new_password = input('enter a new:')
-        password1_list.append(new_password)
-        print 'update'
-        account_login()
-    else:
-        print 'wrong'
-        account_login()
-account_login()
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# 可写函数说明
+def changeme(mylist):
+    "修改传入的列表"
+    mylist.append([1 , 2 , 3 , 4]);
+    print "函数内取值: " , mylist
+    return
+
+
+# 调用changeme函数
+mylist = [10 , 20 , 30];
+changeme(mylist);
+print "函数外取值: " , mylist
