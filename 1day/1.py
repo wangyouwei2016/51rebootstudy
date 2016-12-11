@@ -1,46 +1,41 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# @Author: IcySun
-# 脚本功能：分析apache日志 统计高频IP 和高频url
+#
+# Custom awk.py module
+#
 
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-from collections import Counter
-import os
 
-path = 'F:/log/'
-ipcount = []
-urlcount = []
-def use():
-    print '#' * 50
-    print '\t Analysis Logs For Apache'
-    print '\t\t Code By: IcySun'
-    print '#' * 50
+class controller:
+    def __init__(self , f):
+        self.m_file = f
+        self.m_handlers = []
 
-def getcount(path):
-    for root, dirs, files in os.walk(path):
-        for fn in files:
-            logname = root+'/'+fn
+    def subscribe(self , o):
+        self.m_handlers.append(o)
 
-            for x in open(logname).readlines():
-                ip = x.split(' ')[0]
-                url = x.split(' ')[6]
-                ipcount.append(ip)
-                urlcount.append(url)
+    def run(self):
 
-            iplist = Counter(ipcount)
-            urllist = Counter(urlcount)
-            print '======正在分析的日志：%s======'
-            for ip,count1 in iplist.most_common(5):
-                print '[+] 访问IP: %s ,访问次数: %d' % (ip,count1)
+        for o in self.m_handlers:
+            o.begin()
 
-            for url,count2 in urllist.most_common(10):
-                print '[+] 访问URL: %s ,访问次数: %d' % (url,count2)
+        s = self.m_file.readline()
 
-def main():
-    use()
-    getcount(path)
+        while s != "":
 
-if __name__ == '__main__':
-    main()
+            for o in self.m_handlers:
+                o.process_line(s)
+
+            s = self.m_file.readline()
+
+        for o in self.m_handlers:
+            o.end()
+
+    def print_results(self):
+
+        print
+        print "Results:"
+        print
+
+        for o in self.m_handlers:
+            print "------------------------------------------------------"
+            print o.description()
+            print "------------------------------------------------------"
+            print o.result()
