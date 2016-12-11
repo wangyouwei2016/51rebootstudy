@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Author: IcySun
+# @Author: wangyw
 # 脚本功能：分析apache日志 统计高频IP 和高频url
 import urllib2,urllib
 import sys
@@ -34,3 +34,4 @@ res = res_data.read().decode('utf-8')
 if iplist.most_common(5)[0][0]not in liwaiip:
     print iplist.most_common(5)[0][0]
     print res
+    print urllist.most_common(5)
