@@ -1,10 +1,9 @@
-import urllib
-import urllib2
-ip = '211.137.19.234'
-url = "http://freeapi.ipip.net/{}".format(ip)
-print url
-req = urllib2.Request(url)
-print req
-res_data = urllib2.urlopen(req)
-res = res_data.read()
-print res
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import time
+
+# 格式化成2016-03-20 11:45:39形式
+print time.strftime("%Y-%m-%d", time.localtime())
+riqi = time.strftime("%Y_%m_%d", time.localtime())
+logname = ('/home/wangyw/access_log-%s.log' %(riqi))
+print logname

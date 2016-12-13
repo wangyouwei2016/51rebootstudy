@@ -4,12 +4,15 @@
 # 脚本功能：分析apache日志 统计高频IP 和高频url
 import urllib2,urllib
 import sys
+import time
 reload(sys)
 sys.setdefaultencoding('utf-8')
 from collections import Counter
 import os
 liwaiip = ['59.46.22.351','59.46.22.352']
-logname = '/home/wangyw/access_log.log'
+riqi = time.strftime("%Y_%m_%d", time.localtime())
+logname = ('/home/wangyw/access_log-%s.log' %(riqi))
+
 ipcount = []
 urlcount = []
 for x in open(logname).readlines():
