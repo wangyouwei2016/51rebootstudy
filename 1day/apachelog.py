@@ -31,7 +31,9 @@ req = urllib2.Request(url)
 res_data = urllib2.urlopen(req)
 res = res_data.read().decode('utf-8')
 # csres = res_data.read().decode('utf-8')[2:4]
+
 if iplist.most_common(5)[0][0]not in liwaiip:
     print iplist.most_common(5)[0][0]
+    print iplist.most_common(5)[0][1]
     print res
-    print urllist.most_common(5)
+    print urllist.most_common(5)[0][0]
