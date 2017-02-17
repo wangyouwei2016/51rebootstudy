@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Author: wangyw
-# 脚本功能：分析apache日志 统计高频IP 和高频url
+
 import urllib2,urllib
 import sys
 import time
@@ -10,9 +9,9 @@ sys.setdefaultencoding('utf-8')
 from collections import Counter
 import os
 liwaiip = ['59.46.22.351','59.46.22.352']
-riqi = time.strftime("%Y_%m_%d", time.localtime())
-logname = ('/home/wangyw/access_log-%s.log' %(riqi))
-
+# riqi = time.strftime("%Y_%m_%d", time.localtime())
+# logname = ('/home/wangyw/access_log-%s.log' %(riqi))
+logname = ('/home/wangyw/access_log.log')
 ipcount = []
 urlcount = []
 for x in open(logname).readlines():
@@ -38,5 +37,5 @@ res = res_data.read().decode('utf-8')
 if iplist.most_common(5)[0][0]not in liwaiip:
     print iplist.most_common(5)[0][0]
     print iplist.most_common(5)[0][1]
-    print res
+    print res[7:9]
     print urllist.most_common(5)[0][0]
